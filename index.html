@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barışalım mı?</title>
+
+<style>
+body {
+font-family: Arial, sans-serif;
+text-align: center;
+background: #fff0f5;
+margin: 0;
+padding: 20px;
+}
+
+h1 {
+color: #c0392b;
+font-size: 1.8rem;
+}
+
+.buttons {
+margin-top: 40px;
+position: relative;
+height: 200px;
+}
+
+#evet {
+background: #2ecc71;
+color: white;
+font-size: 2rem;
+padding: 15px 50px;
+border: none;
+border-radius: 15px;
+}
+
+#hayir {
+background: #e74c3c;
+color: white;
+font-size: 0.9rem;
+padding: 10px 15px;
+border: none;
+border-radius: 10px;
+position: absolute;
+top: 120px;
+left: 50%;
+transform: translateX(-50%);
+}
+</style>
+</head>
+
+<body>
+
+<h1>
+Seni üzdüğüm için özür dilerim.<br>
+Barışalım mı?
+</h1>
+
+<div class="buttons">
+<button id="evet" onclick="evet()">EVET</button>
+<button id="hayir">Hayır dersen çok üzülürüm...</button>
+</div>
+
+<script>
+const hayir = document.getElementById("hayir");
+
+function kac() {
+const maxX = window.innerWidth - hayir.offsetWidth - 20;
+const maxY = window.innerHeight - hayir.offsetHeight - 20;
+hayir.style.left = Math.random() * maxX + "px";
+hayir.style.top = Math.random() * maxY + "px";
+}
+
+hayir.addEventListener("mouseover", kac);
+hayir.addEventListener("touchstart", kac);
+
+function evet() {
+document.body.innerHTML = `
+<h1>❤️ YAŞASIN ❤️</h1>
+<p style="font-size:1.3rem;">İyi ki varsın, seni çok seviyorum.</p>
+`;
+}
+</script>
+
+</body>
+</html>
