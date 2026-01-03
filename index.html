@@ -12,6 +12,7 @@ text-align: center;
 background: #fff0f5;
 margin: 0;
 padding: 20px;
+overflow: hidden;
 }
 
 h1 {
@@ -46,6 +47,13 @@ top: 120px;
 left: 50%;
 transform: translateX(-50%);
 }
+
+img {
+width: 80%;
+max-width: 300px;
+border-radius: 20px;
+margin-top: 20px;
+}
 </style>
 </head>
 
@@ -65,18 +73,18 @@ Barışalım mı?
 const hayir = document.getElementById("hayir");
 
 function kac() {
-const maxX = window.innerWidth - hayir.offsetWidth - 20;
-const maxY = window.innerHeight - hayir.offsetHeight - 20;
-hayir.style.left = Math.random() * maxX + "px";
-hayir.style.top = Math.random() * maxY + "px";
+const x = Math.random() * (window.innerWidth - hayir.offsetWidth);
+const y = Math.random() * (window.innerHeight - hayir.offsetHeight);
+hayir.style.left = x + "px";
+hayir.style.top = y + "px";
 }
-
 hayir.addEventListener("mouseover", kac);
 hayir.addEventListener("touchstart", kac);
 
 function evet() {
 document.body.innerHTML = `
 <h1>❤️ YAŞASIN ❤️</h1>
+<img src="foto.jpg">
 <p style="font-size:1.3rem;">İyi ki varsın, seni çok seviyorum.</p>
 `;
 }
